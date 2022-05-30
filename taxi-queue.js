@@ -26,11 +26,13 @@ function TaxiQueue() {
 	}
 
 	function taxiDepart() {
-		if (_queueLength >= 12) {
-			_queueLength-12
-		} else if (_queueLength < 12) {
-			_queueLength++
+		
+		if (_queueLength >= 12 && _taxiLength > 0) {
+			_queueLength-=12
+			_taxiLength--
+			console.log(_queueLength)
 		}
+	
 	}
 
 	return {
